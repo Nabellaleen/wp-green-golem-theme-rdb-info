@@ -1,10 +1,9 @@
 <?php $options = get_option( 'revenudebase_options_prefix' ); ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en" "http://www.w3.org/TR/html4/loose.dtd">
 <html <?php language_attributes(); ?>>
   <head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
-    <meta content='Revenu De Base - Javascript &amp; JQuery' name='description' />
     <meta content='Gnuside' name='author' />
     <link href='//fonts.googleapis.com/css?family=Concert+One:400|Parisienne:400|Karla:700,400|Dosis:400,500,600,700' rel='stylesheet' type='text/css' />
     <link href='<?php echo get_template_directory_uri(); ?>/css/blueprint/screen.css' media='screen, projection' rel='stylesheet' />
@@ -20,18 +19,18 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" />
 
-	<title>
-		<?php 
-		$title = bloginfo('name');
+	<title><?php 
+
 		if ( is_404() ){ 
-			$title .= "&raquo;" .  _e('Not Found');
+			 _e('Not Found');
 		} elseif ( is_home() ) {
-			$title .= "&raquo;" . bloginfo('description');
+			bloginfo('description');
 		} else {
-			$title .= "&raquo;" . wp_title();
+			wp_title();
 		}
-		?>
-	</title>
+		echo " - ";
+		bloginfo('name');
+	?></title>
 
 
 	<?php wp_head(); ?>
